@@ -1,4 +1,5 @@
 
+
 let canvas = document.getElementById("GameScreen");
 let ctx = canvas.getContext("2d");
 var j = 0;
@@ -7,9 +8,9 @@ var l;
 var canvasPos = getPosition(canvas);
 var mouseX = 0;
 var mouseY = 0;
-var miss = 0;
+var missed = 0;
 
-var score = 1;
+var score = 0;
 canvas.style.cursor = "crosshair";
 
 const img = new Image();
@@ -24,7 +25,7 @@ img.src = 'img/bird.png';
       ctx.drawImage(img, j, k, 75, 75);
       myLoop();
       if (j >= 800) {
-        ++miss;
+        ++missed;
         j = -90; 
             k = Math.floor(Math.random() * 400);
             l = Math.random();
@@ -69,8 +70,8 @@ function update() {
     
     ctx.fill();
     requestAnimationFrame(update);
-    ctx.font = "30px Arial";
-    ctx.fillText(`Score: ${score}`,650, 50); 
+    ctx.font = "20px Arial";
+    ctx.fillText(`Score: ${score}      Missed: ${missed-score}`,550, 30); 
 }
 
 update()
