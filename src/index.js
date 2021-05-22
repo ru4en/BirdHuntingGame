@@ -5,7 +5,7 @@ var j = 800;
 var k = Math.floor(Math.random() * 400);
 var l;
 var level = 1;
-var speed = 7;
+var speed = 15;
 var canvasPos = getPosition(canvas);
 var mouseX = 0;
 var mouseY = 0;
